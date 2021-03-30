@@ -1,0 +1,17 @@
+---
+configuration:
+  provider: http-provider
+  type: http
+  http: get
+  url: https://jsonplaceholder.typicode.com/todos
+checks:
+  - id: todo-ids-check
+    name: check if todos has an id.
+    severity: High
+    parser: jmespath
+    steps:
+      - path: "[].id"
+        condition: equal
+        evaluationMethod: map
+        utility: isInteger
+        value: true

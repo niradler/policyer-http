@@ -1,0 +1,40 @@
+{
+  "name": "policyer-http",
+  "version": "0.0.2",
+  "description": "Provider http to check apis with policyer.",
+  "main": "index.js",
+  "bin": {
+    "policyer-http": "cli.js"
+  },
+  "scripts": {
+    "start": "node cli.js -o ./report.json -p ./checks -i false -v",
+    "update": "npm uninstall policyer && npm install policyer",
+    "test": "jest"
+  },
+  "keywords": [
+    "http",
+    "check",
+    "test",
+    "policyer"
+  ],
+  "author": "Nir Adler",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "policyer": "0.0.15"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niradler/policyer-http.git"
+  },
+  "bugs": {
+    "url": "https://github.com/niradler/policyer-http/issues"
+  },
+  "homepage": "https://github.com/niradler/policyer-http#readme"
+}

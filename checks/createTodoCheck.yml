@@ -1,0 +1,34 @@
+---
+configuration:
+  provider: http-provider
+  type: http
+  http: post
+  url: https://jsonplaceholder.typicode.com/todos
+  headers:
+    Content-Type: application/json
+  payload:
+    "userId": 1
+    "id": 1
+    "title": "delectus aut autem"
+    "completed": false
+checks:
+  - id: create-todo-check
+    name: check todo created.
+    severity: High
+    steps:
+      - path: id
+        condition: equal
+        utility: isInteger
+        value: true
+      - path: id
+        condition: equal
+        value: 201
+      - path: userId
+        condition: equal
+        value: 1
+      - path: completed
+        condition: equal
+        value: false
+      - path: title
+        condition: equal
+        value: "delectus aut autem"
